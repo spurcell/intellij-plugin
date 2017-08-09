@@ -1,0 +1,34 @@
+<idea-plugin>
+  <id>org.lo-language.plugin</id>
+  <name>Lo</name>
+  <version>1.0</version>
+  <vendor url="http://lo-language.org">Lo</vendor>
+
+  <description><![CDATA[
+      Support for the Lo programming language.<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Initial release.<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileTypeFactory implementation="org.lolanguage.LoFileTypeFactory"/>
+    <lang.parserDefinition language="Lo" implementationClass="org.lolanguage.LoParserDefinition"/>
+    <lang.syntaxHighlighterFactory key="Lo" implementationClass="org.lolanguage.LoSyntaxHighlighterFactory"/>
+    <colorSettingsPage implementation="org.lolanguage.LoColorSettingsPage"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>

@@ -1,0 +1,22 @@
+{
+  parserClass="org.lolanguage.parser.LoParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Lo"
+  psiImplClassSuffix="Impl"
+  psiPackage="org.lolanguage.psi"
+  psiImplPackage="org.lolanguage.psi.impl"
+
+  elementTypeHolderClass="org.lolanguage.psi.LoTypes"
+  elementTypeClass="org.lolanguage.psi.LoElementType"
+  tokenTypeClass="org.lolanguage.psi.LoTokenType"
+
+  psiImplUtilClass="org.lolanguage.psi.impl.LoPsiImplUtil"
+}
+
+simpleFile ::= (property|COMMENT)*
+
+property ::= (KEY SEPARATOR VALUE?)|KEY
+
+private recover_property ::= !(KEY|SEPARATOR|COMMENT)
